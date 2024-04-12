@@ -12,4 +12,10 @@ public class Rainha extends ChessPiece {
     public String toString() {
         return "Ra";
     }
+
+    @Override
+    public boolean[][] possibleMoves() {
+        boolean [][] mat = new boolean[getBoard().getRows()][getBoard().getRows()];
+        return mat;
+    }
 }
