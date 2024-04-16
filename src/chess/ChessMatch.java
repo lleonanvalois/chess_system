@@ -5,6 +5,8 @@ import boardgame.Piece;
 import boardgame.Position;
 import chess.chess.pieces.*;
 
+import java.lang.annotation.Target;
+
 public class ChessMatch {
     private Board board;
 
@@ -28,6 +30,7 @@ public class ChessMatch {
         Position source = sourcePosition.toPosition();
         Position target = targertPosition.toPosition();
         validateSourcePosition(source);
+        validateTargetPosition(source, target);
         Piece capturedPiece = makeMove(source, target);
         return (ChessPiece)capturedPiece;
     }
@@ -47,28 +50,33 @@ public class ChessMatch {
         }
     }
 
+    private void validateTargetPosition(Position source, Position target) {
+        if (!board.piece(source).possibleMove(target)) {
+            throw new ChessException("A peça escolhida não pode se mover para a posição de destino");
+        }
+    }
+
     private void placeNewPiece(char column, int row, ChessPiece piece) {
         board.placePiece(piece, new ChessPosition(column, row).toPosition());
     }
 
         private void initialSetup() {
-            placeNewPiece('c', 1, new Peao(board, Color.white));
-            placeNewPiece('c', 2, new Peao(board, Color.white));
-            placeNewPiece('d', 2, new Peao(board, Color.white));
-            placeNewPiece('e', 2, new Peao(board, Color.white));
-            placeNewPiece('e', 1, new Peao(board, Color.white));
+            placeNewPiece('c', 1, new Torre(board, Color.white));
+            placeNewPiece('c', 2, new Torre(board, Color.white));
+            placeNewPiece('d', 2, new Torre(board, Color.white));
+            placeNewPiece('e', 2, new Torre(board, Color.white));
+            placeNewPiece('e', 1, new Torre(board, Color.white));
             placeNewPiece('d', 1, new Rei(board, Color.white));
 
-            placeNewPiece('c', 7, new Peao(board, Color.black));
-            placeNewPiece('c', 8, new Peao(board, Color.black));
-            placeNewPiece('d', 7, new Peao(board, Color.black));
-            placeNewPiece('e', 7, new Peao(board, Color.black));
-            placeNewPiece('e', 8, new Peao(board, Color.black));
+            placeNewPiece('c', 7, new Torre(board, Color.black));
+            placeNewPiece('c', 8, new Torre(board, Color.black));
+            placeNewPiece('d', 7, new Torre(board, Color.black));
+            placeNewPiece('e', 7, new Torre(board, Color.black));
+            placeNewPiece('e', 8, new Torre(board, Color.black));
             placeNewPiece('d', 8, new Rei(board, Color.black));
 
-
-
-
         }
+
+
 
 }
