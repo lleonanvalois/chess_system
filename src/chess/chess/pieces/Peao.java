@@ -44,9 +44,6 @@ public class Peao extends ChessPiece {
 
             p.setValues(position.getRow() - 1, position.getColumn() + 1);
 
-            if (getBoard().positionExists(p) && isThereOpponentPiece(p)) {
-                mat [p.getRow()] [p.getColumn()] = true;
-            }
         }
         else {
 
@@ -73,9 +70,6 @@ public class Peao extends ChessPiece {
 
             p.setValues(position.getRow() + 1, position.getColumn() + 1);
 
-           /* if (getBoard().positionExists(p) && isThereOpponentPiece(p)) {
-                mat [p.getRow()] [p.getColumn()] = true;
-            } */
 
         }
 
