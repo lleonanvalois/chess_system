@@ -204,6 +204,8 @@ public class ChessMatch {
             placeNewPiece('h', 2, new Peao(board, Color.white));
             placeNewPiece('c', 1, new Bispo(board, Color.white));
             placeNewPiece('f', 1, new Bispo(board, Color.white));
+            placeNewPiece('b', 1, new Cavalo(board, Color.white));
+            placeNewPiece('g', 1, new Cavalo(board, Color.white));
 
 
 
@@ -221,6 +223,8 @@ public class ChessMatch {
             placeNewPiece('h', 7, new Peao(board, Color.black));
             placeNewPiece('c', 8, new Bispo(board, Color.black));
             placeNewPiece('f', 8, new Bispo(board, Color.black));
+            placeNewPiece('b', 8, new Cavalo(board, Color.black));
+            placeNewPiece('g', 8, new Cavalo(board, Color.black));
 
         }
 
