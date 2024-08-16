@@ -11,7 +11,7 @@ public class Rainha extends ChessPiece {
     }
     @Override
     public String toString() {
-        return "Ra";
+        return "Q";
     }
 
     @Override
