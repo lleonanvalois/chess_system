@@ -38,6 +38,11 @@ public class Program {
                 if (capturedPiece != null) {
                     captured.add(capturedPiece);
                 }
+                if (chessMatch.getPromoção() != null) {
+                    System.out.print("Selecione para qual peça promover (B, C, T ou Q: ");
+                    String type = sc.nextLine();
+                    chessMatch.replacePromotedPiece(type);
+                }
             }
             catch (ChessException | InputMismatchException e) {
                 System.out.println(e.getMessage());
