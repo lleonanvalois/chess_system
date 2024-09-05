@@ -10,9 +10,13 @@ public class Rei extends ChessPiece {
 
     private ChessMatch chessMatch;
 
-    public Rei(Board board, Color color, ChessMatch chessMatch) {
+    public Rei(Board board, Color color, ChessMatch chessMatch)  {
         super(board, color);
         this.chessMatch = chessMatch;
+    }
+    public Rei(Board board, Color color) {
+        super(board, color);
+
     }
     @Override
     public String toString() {
